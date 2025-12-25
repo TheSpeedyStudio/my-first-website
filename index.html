@@ -5,7 +5,34 @@
 <title>Speedy Studio</title>
 </head>
 <body>
-<h1>⚡ Speedy Studio</h1>
-<p>It works!</p>
+
+<h1>⚡ Speedy Studio AI</h1>
+
+<input id="q" placeholder="Ask Speedy AI">
+<button onclick="ask()">Ask</button>
+<p id="a"></p>
+
+<script>
+const WORKER="https://speedy-ai.speedyyt772-ad8.workers.dev";
+
+async function ask(){
+ const q=document.getElementById("q").value;
+ const uid=localStorage.getItem("uid")||
+  (localStorage.setItem("uid",crypto.randomUUID()),
+   localStorage.getItem("uid"));
+
+ document.getElementById("a").innerText="Thinking…";
+
+ const r=await fetch(WORKER,{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body:JSON.stringify({q,uid})
+ });
+ const j=await r.json();
+ document.getElementById("a").innerText=
+  j.choices[0].message.content;
+}
+</script>
+
 </body>
 </html>
