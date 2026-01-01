@@ -1,38 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Speedy Studio</title>
+  <meta charset="UTF-8">
+  <title>My First Website</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>⚡ Speedy Studio AI</h1>
+  <div class="hero">
+    <h1>The All-In-One Platform</h1>
+    <h2>for Developers</h2>
 
-<input id="q" placeholder="Ask Speedy AI">
-<button onclick="ask()">Ask</button>
-<p id="a"></p>
+    <p>
+      A modern platform where creators can build, sell,
+      and share high-quality assets.
+    </p>
 
-<script>
-const WORKER="https://speedy-ai.speedyyt772-ad8.workers.dev";
+    <div class="buttons">
+      <button class="primary">Shop</button>
+      <button class="secondary">Open a Store</button>
+    </div>
 
-async function ask(){
- const q=document.getElementById("q").value;
- const uid=localStorage.getItem("uid")||
-  (localStorage.setItem("uid",crypto.randomUUID()),
-   localStorage.getItem("uid"));
-
- document.getElementById("a").innerText="Thinking…";
-
- const r=await fetch(WORKER,{
-  method:"POST",
-  headers:{"Content-Type":"application/json"},
-  body:JSON.stringify({q,uid})
- });
- const j=await r.json();
- document.getElementById("a").innerText=
-  j.choices[0].message.content;
-}
-</script>
+  </div>
 
 </body>
 </html>
