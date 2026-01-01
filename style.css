@@ -1,20 +1,122 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  color: white;
-  background: black;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0b0e14;
+  color: white;
+}
+
+/* HERO */
 .hero {
   min-height: 100vh;
-  padding: 80px;
   background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
     url("background.jpg");
   background-size: cover;
   background-position: center;
 
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  padding: 80px;
+}
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+}
+
+/* HEADINGS */
+h1 {
+  font-size: 54px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 54px;
+  color: #4f8cff;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+p {
+  max-width: 520px;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* PRIMARY BUTTON */
+.primary {
+  background: #4f8cff;
+  color: white;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(79,140,255,0.5);
+}
+
+/* SECONDARY BUTTON */
+.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.secondary:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 30px 40px;
+  min-width: 220px;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.card span {
+  font-size: 13px;
+  opacity: 0.7;
 }
