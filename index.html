@@ -27,20 +27,37 @@
       <a href="#">Create one here</a>
     </p>
 
+    <!-- OAUTH -->
+    <div class="oauth">
+      <button class="oauth-btn discord">Discord</button>
+      <button class="oauth-btn roblox">Roblox</button>
+    </div>
+
+    <div class="divider">or login with email</div>
+
     <form id="loginForm">
+
       <label>Email</label>
       <input type="email" id="email" placeholder="you@example.com">
+
+      <label>Password</label>
+      <div class="password-box">
+        <input type="password" id="password" placeholder="••••••••">
+        <span id="toggle">Show</span>
+      </div>
+
       <span class="error" id="error"></span>
 
       <button type="submit" class="continue" disabled>
-        Continue
+        <span class="btn-text">Continue</span>
+        <span class="spinner"></span>
       </button>
     </form>
   </section>
 
   <!-- RIGHT -->
   <section class="visual">
-    <img src="background.jpg" alt="Background">
+    <img src="background.jpg">
     <div class="overlay-logo">⬢</div>
   </section>
 
